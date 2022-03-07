@@ -12,8 +12,10 @@ jobs:
         matrix:
           destination: ['platform=iOS Simulator,OS=13.2.2,name=iPhone 11 Pro Max']
     steps:
-      - name: Test
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: Build
         run: |
-          xcodebuild clean test -project CustomTextFields.xcodeproj -scheme CustomTextFieldsUITests -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
+          xcodebuild clean build -project CustomTextFields.xcodeproj -scheme GHFollowers -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
         env: 
          destination: ${{ matrix.destination }}

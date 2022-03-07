@@ -63,6 +63,10 @@ final class ViewController: UIViewController {
     func validateField(with isValid: Bool?, on textField: BJTextField, message: String = "") {
         textField.validateField(isValid: isValid, message: message)
     }
-
+    
+    func testPrint() {
+        print("Hello")
+    }
+    
 }
 

@@ -68,5 +68,9 @@ final class ViewController: UIViewController {
         print("Hello")
     }
     
+    fun testPrint2() {
+        print("Hello 2")
+    }
+    
 }
 

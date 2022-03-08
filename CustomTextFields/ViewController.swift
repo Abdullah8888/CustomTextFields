@@ -64,13 +64,5 @@ final class ViewController: UIViewController {
         textField.validateField(isValid: isValid, message: message)
     }
     
-    func testPrint() {
-        print("Hello")
-    }
-    
-    func testPrint2() {
-        print("Hello 2")
-    }
-    
 }
 

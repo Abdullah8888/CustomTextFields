@@ -2,7 +2,8 @@ name: CI
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
   test:
@@ -18,8 +19,10 @@ jobs:
           xcodebuild clean build -project CustomTextFields.xcodeproj -scheme CustomTextFields -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
         env: 
          destination: ${{ matrix.destination }}
+         MERGED_TRUE_BOOL: ${{ github.event.pull_request.merged == true }}
       - name: Test
         run: |
           xcodebuild clean test -project CustomTextFields.xcodeproj -scheme CustomTextFieldsUITests -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
         env: 
          destination: ${{ matrix.destination }}
+         MERGED_TRUE_BOOL: ${{ github.event.pull_request.merged == true }}
